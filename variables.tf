@@ -1,13 +1,25 @@
 variable "name" {
   description = "The specification of module name."
   type        = string
-  default     = "tf-vpc-ecs-eip"
+  default     = ""
 }
 
 variable "description" {
   description = "The specification of module description."
   type        = string
   default     = "tf-vpc-ecs-eip-description"
+}
+
+variable "vpc_id" {
+  description = "The specification of module vpc id."
+  type        = string
+  default     = ""
+}
+
+variable "vswitch_id" {
+  description = "The specification of module vswitch id."
+  type        = string
+  default     = ""
 }
 
 variable "instance_type" {
@@ -19,25 +31,25 @@ variable "instance_type" {
 variable "system_disk_category" {
   description = "The specification of the system disk category."
   type        = string
-  default     = "cloud_efficiency"
+  default     = ""
 }
 
 variable "system_disk_name" {
   description = "The specification of the system disk name."
   type        = string
-  default     = "system_disk"
+  default     = ""
 }
 
 variable "system_disk_description" {
   description = "The specification of the system disk description."
   type        = string
-  default     = "system_disk_description"
+  default     = ""
 }
 
 variable "image_id" {
   description = "The specification of the image id."
   type        = string
-  default     = "ubuntu_18_04_64_20G_alibase_20190624.vhd"
+  default     = ""
 }
 
 variable "internet_max_bandwidth_out" {
@@ -72,29 +84,36 @@ variable "availability_zone" {
 
 variable "cidr_block" {
   description = "The cidr block of VPC"
-  default     = "172.16.0.0/16"
+  type        = string
+  default     = ""
 }
 
 variable "eip_isp" {
   description = "The ISP of EIP address."
+  type        = string
   default     = "BGP"
 }
 
 variable "eip_payment_type" {
   description = "The payment type of EIP address."
+  type        = string
   default     = "PayAsYouGo"
 }
 
 variable "primary_ip_address" {
-  default = "172.16.0.1"
+  description = "The payment type of ip address."
+  type        = string
+  default     = ""
 }
 
 variable "eip_instance_type" {
   description = "The instance type of EIP."
+  type        = string
   default     = "NetworkInterface"
 }
 
 variable "secondary_private_ip_address_count" {
   description = "The secondary private ip address count of EIP."
+  type        = string
   default     = 1
 }
